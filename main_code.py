@@ -50,4 +50,9 @@ while running:
         player_pos[0] -= player_speed
     if keys[pygame.K_RIGHT] and player_pos[0] > WITDH - player_size:
         player_pos[0] += player_speed
+    # Enemy movement
+    enemy_pos[1] += enemy_speed
+    if enemy_pos[1] > HEIGHT:
+        enemy_pos[1] = 0
+        enemy_pos[0] = random.randint(0, WITDH - enemy_size)
 pygame.quit()
