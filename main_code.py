@@ -24,6 +24,10 @@ enemy_size = 50
 enemy_pos = [[random.randint(0 - WITDH - enemy_size), 0]]
 enemy_speed = 5
 
+# Clock and Font
+clock = pygame.time.Clock()
+font = pygame.font.SysFont("monospace", 35)
+
 # Game loop (shows the window)
 running = True
 while running:
