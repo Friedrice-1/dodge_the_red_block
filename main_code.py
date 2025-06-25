@@ -21,7 +21,7 @@ player_speed = 5
 
 # Enemy setup
 enemy_size = 50
-enemy_pos = [[random.randint(0, WIDTH - enemy_size), 0]]
+enemy_pos = [random.randint(0, WIDTH - enemy_size), 0]
 enemy_speed = 5
 
 # Clock and Font
@@ -33,8 +33,8 @@ def detect_collision(player_pos, enemy_pos):
     player_x , player_y = player_pos
     enemy_x , enemy_y = enemy_pos
     
-    return(enemy_x < player_x + enemy_size or enemy_x < player_x + player_size < enemy_x + enemy_size) and \
-            (enemy_y < player_y + enemy_size or enemy_y < player_y + player_size < enemy_y + enemy_size)
+    return(enemy_x < player_x < enemy_x + enemy_size or enemy_x < player_x + player_size < enemy_x + enemy_size) and \
+            (enemy_y < player_y < enemy_y + enemy_size or enemy_y < player_y + player_size < enemy_y + enemy_size)
 
 # Game loop (shows the window)
 running = True
@@ -46,9 +46,9 @@ while running:
     # Key press detection
     keys = pygame.key.get_pressed()
     # Player movement
-    if keys[pygame.K_LEFT] and player_pos[0] > 0:
+    if keys[pygame.K_a] and player_pos[0] > 0:
         player_pos[0] -= player_speed
-    if keys[pygame.K_RIGHT] and player_pos[0] > WIDTH - player_size:
+    if keys[pygame.K_d] and player_pos[0] < WIDTH - player_size:
         player_pos[0] += player_speed
     # Enemy movement
     enemy_pos[1] += enemy_speed
