@@ -14,6 +14,11 @@ WHITE = (255, 255, 255)
 RED = (255, 0, 0)
 BLUE = (0, 0, 255)
 
+# Player setup
+player_size = 50
+player_pos = [WITDH // 2, HEIGHT - player_size]
+player_speed = 5
+
 # Game loop (shows the window)
 running = True
 while running:
