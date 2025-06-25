@@ -7,8 +7,8 @@ pygame.init()
 
 # Screen setup
 
-WITDH, HEIGHT = 600 , 400
-screen = pygame.display.set_mode((WITDH, HEIGHT))
+WIDTH, HEIGHT = 600 , 400
+screen = pygame.display.set_mode((WIDTH, HEIGHT))
 pygame.display.set_caption("Dodge the red falling block.")
 WHITE = (255, 255, 255)
 RED = (255, 0, 0)
@@ -16,12 +16,12 @@ BLUE = (0, 0, 255)
 
 # Player setup
 player_size = 50
-player_pos = [WITDH // 2, HEIGHT - player_size]
+player_pos = [WIDTH // 2, HEIGHT - player_size]
 player_speed = 5
 
 # Enemy setup
 enemy_size = 50
-enemy_pos = [[random.randint(0, WITDH - enemy_size), 0]]
+enemy_pos = [[random.randint(0, WIDTH - enemy_size), 0]]
 enemy_speed = 5
 
 # Clock and Font
@@ -48,17 +48,17 @@ while running:
     # Player movement
     if keys[pygame.K_LEFT] and player_pos[0] > 0:
         player_pos[0] -= player_speed
-    if keys[pygame.K_RIGHT] and player_pos[0] > WITDH - player_size:
+    if keys[pygame.K_RIGHT] and player_pos[0] > WIDTH - player_size:
         player_pos[0] += player_speed
     # Enemy movement
     enemy_pos[1] += enemy_speed
     if enemy_pos[1] > HEIGHT:
         enemy_pos[1] = 0
-        enemy_pos[0] = random.randint(0, WITDH - enemy_size)
+        enemy_pos[0] = random.randint(0, WIDTH - enemy_size)
     #Collision detection
     if detect_collision(player_pos, enemy_pos):
         text = font.render(("Game Over!"), True, RED)
-        screen.blit(text, (WITDH // 2 - 100, HEIGHT // 2))
+        screen.blit(text, (WIDTH // 2 - 100, HEIGHT // 2))
         pygame.display.update()
         pygame.time.wait(2000)
         running = False
