@@ -19,6 +19,11 @@ player_size = 50
 player_pos = [WITDH // 2, HEIGHT - player_size]
 player_speed = 5
 
+# Enemy setup
+enemy_size = 50
+enemy_pos = [[random.randint(0 - WITDH - enemy_size), 0]]
+enemy_speed = 5
+
 # Game loop (shows the window)
 running = True
 while running:
