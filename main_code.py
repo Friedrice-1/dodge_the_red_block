@@ -55,4 +55,11 @@ while running:
     if enemy_pos[1] > HEIGHT:
         enemy_pos[1] = 0
         enemy_pos[0] = random.randint(0, WITDH - enemy_size)
+    #Collision detection
+    if detect_collision(player_pos, enemy_pos):
+        text = font.render(("Game Over!"), True, RED)
+        screen.blit(text, (WITDH // 2 - 100, HEIGHT // 2))
+        pygame.display.update()
+        pygame.time.wait(2000)
+        running = False
 pygame.quit()
