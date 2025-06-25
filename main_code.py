@@ -21,7 +21,7 @@ player_speed = 5
 
 # Enemy setup
 enemy_size = 50
-enemy_pos = [[random.randint(0 - WITDH - enemy_size), 0]]
+enemy_pos = [[random.randint(0, WITDH - enemy_size), 0]]
 enemy_speed = 5
 
 # Clock and Font
@@ -43,4 +43,11 @@ while running:
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
             running = False
+    # Key press detection
+    keys = pygame.key.get_pressed()
+    # Player movement
+    if keys[pygame.K_LEFT] and player_pos[0] > 0:
+        player_pos[0] -= player_speed
+    if keys[pygame.K_RIGHT] and player_pos[0] > WITDH - player_size:
+        player_pos[0] += player_speed
 pygame.quit()
