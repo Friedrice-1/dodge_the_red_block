@@ -62,4 +62,10 @@ while running:
         pygame.display.update()
         pygame.time.wait(2000)
         running = False
+    # Drawing
+    pygame.draw.rect(screen, BLUE, (*player_pos, player_size, player_size))
+    pygame.draw.rect(screen, RED, (*enemy_pos, enemy_size, enemy_size))
+    pygame.display.update()
+    clock.tick(30)
+    
 pygame.quit()
