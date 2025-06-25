@@ -28,6 +28,14 @@ enemy_speed = 5
 clock = pygame.time.Clock()
 font = pygame.font.SysFont("monospace", 35)
 
+# Collision function
+def detect_collision(player_pos, enemy_pos):
+    player_x , player_y = player_pos
+    enemy_x , enemy_y = enemy_pos
+    
+    return(enemy_x < player_x + enemy_size or enemy_x < player_x + player_size < enemy_x + enemy_size) and \
+            (enemy_y < player_y + enemy_size or enemy_y < player_y + player_size < enemy_y + enemy_size)
+
 # Game loop (shows the window)
 running = True
 while running:
