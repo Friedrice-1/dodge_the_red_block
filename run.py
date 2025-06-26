@@ -30,3 +30,11 @@ player = Player()
 enemy = Enemy()
 
 # Game loop
+running = True
+while running:
+    screen.fill(WHITE)
+    for event in pygame.event.get():
+        if event.type == pygame.QUIT:
+            running = False
+    pygame.display.update()
+pygame.quit()
