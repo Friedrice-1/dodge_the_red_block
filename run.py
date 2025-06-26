@@ -6,7 +6,14 @@ import pygame
 
 # Initialize pygame
 pygame.init()
+
 # Screen and color setup
+WIDTH, HEIGHT = 600, 400
+WHITE = (255, 255, 255)
+RED = (255, 0, 0)
+screen = pygame.display.set_mode((WIDTH, HEIGHT))
+pygame.display.set_caption("Dodge the red falling block.")
+
 # Clock and font
 # Collision detection
 # Create entities
