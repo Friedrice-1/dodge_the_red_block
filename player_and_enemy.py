@@ -20,4 +20,7 @@ class Player:
             self.pos[0] -= self.speed
         if keys[pygame.K_d] and self.pos[0] < WIDTH - self.size:
             self.pos[0] += self.speed
+    
+    def draw(self, screen):
+        pygame.draw.rect(screen, BLUE, (*self.pos, self.size, self.size))
 # Create the enemy class
