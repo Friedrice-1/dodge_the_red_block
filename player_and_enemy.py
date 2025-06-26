@@ -25,7 +25,7 @@ class Player:
         pygame.draw.rect(screen, BLUE, (*self.pos, self.size, self.size))
 
 # Create the enemy class
-class Eenemy:
+class Enemy:
     def __init__(self, size=50, speed=5):
         self.size = size
         self.speed = speed
