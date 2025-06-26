@@ -40,11 +40,18 @@ while running:
     keys = pygame.key.get_pressed()
     player.move(keys)
     enemy.move()
-
+    
+    if detect_collision(player.pos, enemy.pos, player.size):
+        text = font.render("Game Over!", True, RED)
+        screen.blit(text, (WIDTH // 2 - 100, HEIGHT // 2))
+        pygame.display.update()
+        pygame.time.wait(2000)
+        running = False
+    
     player.draw(screen)
     enemy.draw(screen)
 
     pygame.display.update()
     clock.tick(30)
-    
+
 pygame.quit()
