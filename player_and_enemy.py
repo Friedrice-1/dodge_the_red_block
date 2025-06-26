@@ -14,4 +14,10 @@ class Player:
         self.size = size
         self.speed = speed
         self.pos = [WIDTH // 2, HEIGHT - size]
+
+    def move(self, keys):
+        if keys[pygame.K_a] and self.pos[0] > 0:
+            self.pos[0] -= self.speed
+        if keys[pygame.K_d] and self.pos[0] < WIDTH - self.size:
+            self.pos[0] += self.speed
 # Create the enemy class
