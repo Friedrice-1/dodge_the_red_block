@@ -15,6 +15,9 @@ screen = pygame.display.set_mode((WIDTH, HEIGHT))
 pygame.display.set_caption("Dodge the red falling block.")
 
 # Clock and font
+clock = pygame.time.Clock()
+font = pygame.font.SysFont("monospace", 35)
+
 # Collision detection
 # Create entities
 # Game loop
