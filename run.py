@@ -36,5 +36,15 @@ while running:
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
             running = False
+
+    keys = pygame.key.get_pressed()
+    player.move(keys)
+    enemy.move()
+
+    player.draw(screen)
+    enemy.draw(screen)
+
     pygame.display.update()
+    clock.tick(30)
+    
 pygame.quit()
