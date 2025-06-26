@@ -26,4 +26,7 @@ def detect_collision(p_pos, e_pos, size):
            (ey < py < ey + size or ey < py + size < ey + size)
 
 # Create entities
+player = Player()
+enemy = Enemy()
+
 # Game loop
