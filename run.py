@@ -19,5 +19,11 @@ clock = pygame.time.Clock()
 font = pygame.font.SysFont("monospace", 35)
 
 # Collision detection
+def detect_collision(p_pos, e_pos, size):
+    px, py = p_pos
+    ex, ey = e_pos
+    return (ex < px < ex + size or ex < px + size < ex + size) and \
+           (ey < py < ey + size or ey < py + size < ey + size)
+
 # Create entities
 # Game loop
