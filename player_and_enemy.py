@@ -36,3 +36,6 @@ class Eenemy:
         if self.pos[1] > HEIGHT:
             self.pos[1] = 0
             self.pos[0] = random.randint(0, WIDTH - self.size)
+    
+    def draw(self, screen):
+        pygame.draw.rect(screen, RED, (*self.pos, self.size, self.size))
