@@ -23,4 +23,10 @@ class Player:
     
     def draw(self, screen):
         pygame.draw.rect(screen, BLUE, (*self.pos, self.size, self.size))
+
 # Create the enemy class
+class Eenemy:
+    def __init__(self, size=50, speed=5):
+        self.size = size
+        self.speed = speed
+        self.pos = [random.randint(0, WIDTH - size), 0]
