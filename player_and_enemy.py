@@ -30,3 +30,9 @@ class Eenemy:
         self.size = size
         self.speed = speed
         self.pos = [random.randint(0, WIDTH - size), 0]
+    
+    def move(self):
+        self.pos[1] += self.speed
+        if self.pos[1] > HEIGHT:
+            self.pos[1] = 0
+            self.pos[0] = random.randint(0, WIDTH - self.size)
